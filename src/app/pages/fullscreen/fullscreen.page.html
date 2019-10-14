@@ -1,0 +1,23 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-button (click)="this.dismiss()" color="light">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background-modal">
+  <div class="width-100 height-100 center-horizontal center-vertical">
+    <img [src]="this.foto.link" class="img-grid-height">
+  </div>
+</ion-content>
+
+<ion-footer no-border class="expanded-footer">
+  <div class="flex-v width-100 height-100 center-horizontal extra-info">
+    <div>Fecha: {{this.foto.fecha | date: ['dd/MM/yyyy HH:mm']}}</div>
+    <div>Votos: {{this.foto.votos.length}}</div>
+    <div *ngIf="this.mostrarUsuario == true">Usuario: {{this.foto.usuario}}</div>
+  </div>
+</ion-footer>

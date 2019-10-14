@@ -16,7 +16,7 @@
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
-@import '~@ionic/angular/css/display.css';
+@import "~@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
 @import "~@ionic/angular/css/padding.css";
@@ -24,3 +24,155 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+@import "./assets/loading.css";
+
+// Adjust height
+.height {
+  &-10 {
+    height: 10%;
+  }
+  &-20 {
+    height: 20%;
+  }
+  &-30 {
+    height: 30%;
+  }
+  &-40 {
+    height: 40%;
+  }
+  &-50 {
+    height: 50%;
+  }
+  &-60 {
+    height: 60%;
+  }
+  &-70 {
+    height: 70%;
+  }
+  &-80 {
+    height: 80%;
+  }
+  &-90 {
+    height: 90%;
+  }
+  &-100 {
+    height: 100%;
+  }
+}
+
+// Adjust width
+.width {
+  &-10 {
+    width: 10%;
+  }
+  &-20 {
+    width: 20%;
+  }
+  &-30 {
+    width: 30%;
+  }
+  &-40 {
+    width: 40%;
+  }
+  &-50 {
+    width: 50%;
+  }
+  &-60 {
+    width: 60%;
+  }
+  &-70 {
+    width: 70%;
+  }
+  &-80 {
+    width: 80%;
+  }
+  &-90 {
+    width: 90%;
+  }
+  &-100 {
+    width: 100%;
+  }
+}
+
+// Center inside objects horizontally
+.center-horizontal {
+  display: flex;
+  justify-content: center;
+}
+
+// Center inside objects vertically
+.center-vertical {
+  display: flex;
+  align-items: center;
+}
+
+.flex {
+  &-v {
+    display: flex;
+    flex-direction: column;
+  }
+  &-h {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.background-page {
+  --background: #720a09;
+}
+
+.toolbar-main {
+  --color: #fff275;
+  --background: #720a09;
+}
+
+.spinner-class {
+  --background: #720a09;
+
+  .loading-wrapper {
+    background-image: url("./assets/splash_logo.png"), radial-gradient(circle, #720a09 0%, #720a09 100%);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    box-shadow: none;
+    min-width: 100%;
+    min-height: 100%;
+    -webkit-box-shadow: none;
+  }
+}
+
+// Para las paginas de fotos
+.list-main {
+  margin: 0rem 0.2rem;
+}
+
+.list-pic {
+  border: #ff8c42 solid 1rem;
+  border-radius: 1rem;
+  background: #ff8c42;
+  color: #720a09;
+  margin-bottom: 0.2rem;
+
+  &-feas {
+    // Azul
+    border: #ff8c42 solid 1rem;
+    background: #ff8c42;
+    color: #720a09;
+  }
+  &-lindas {
+    // Rosa
+    border: #ff8c42 solid 1rem;
+    background: #ff8c42;
+    color: #720a09;
+  }
+}
+
+.extra-padding {
+  padding-top: 0.1rem;
+}
+
+.img-grid {
+  max-width: 100%;
+  height: auto;
+}

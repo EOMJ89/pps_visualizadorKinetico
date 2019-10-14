@@ -1,0 +1,24 @@
+ion-toolbar {
+  --background: black;
+  --ion-color-base: black !important;
+}
+
+.background-modal {
+  --background: black;
+}
+
+.expanded-footer {
+  height: 4.5rem !important;
+}
+
+.img-grid-height {
+  max-height: 100%;
+  width: auto;
+}
+
+.extra-info {
+  padding: 0rem 1.5rem;
+  background: black;
+  font-size: 1.2rem;
+  color: #f4f5f8;
+}

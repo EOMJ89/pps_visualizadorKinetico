@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar class="toolbar-main">
+    <ion-buttons slot="end">
+      <ion-button (click)="this._auth.desloguear()" color="sunny">
+        <ion-icon name="power"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Estadísticas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background-page">
+  <div class="flex-v width-100 height-100 center-horizontal center-vertical
+    extra-padding">
+    <ion-card class="width-100 height-50 background-card">
+      <ion-card-header>Feas</ion-card-header>
+      <ion-card-content>
+        <canvas #barCanvas></canvas>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="width-100 height-50 background-card">
+      <ion-card-header>Lindas</ion-card-header>
+      <ion-card-content>
+        <canvas #doughnutCanvas></canvas>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

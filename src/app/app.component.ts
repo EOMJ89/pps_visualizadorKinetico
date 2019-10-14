@@ -10,18 +10,29 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent {
+  public showSplash = true;
+
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar
-  ) {
-    this.initializeApp();
-  }
+  ) { this.initializeApp(); }
 
-  initializeApp() {
+  public initializeApp() {
+    // console.log('Inicialize App');
     this.platform.ready().then(() => {
+      // console.log('Desactivo la Status Bar');
       this.statusBar.styleDefault();
-      this.splashScreen.hide();
+
+      setTimeout(() => {
+        // console.log('Desactivo la Splash Screen estÃ¡tica');
+        this.splashScreen.hide();
+      }, 1000);
+
+      setTimeout(() => {
+        // console.log('Desactivo la Splash Screen animada');
+        this.showSplash = false;
+      }, 6000);
     });
   }
 }

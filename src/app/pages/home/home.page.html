@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar class="toolbar-main">
+    <ion-buttons slot="end">
+      <ion-button (click)="this._auth.desloguear()" color="sunny">
+        <ion-icon name="power"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      Inicio
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background-page">
+  <div class="height-100 width-100 center-horizontal center-vertical flex-v">
+    <div class="height-50 width-100 btn btn-a center-horizontal center-vertical
+      flex-v" (click)="irACosas('lindas')">
+      <ion-icon name="thumbs-up"></ion-icon>Cosas Lindas
+    </div>
+    <div class="height-50 width-100 btn btn-b center-horizontal center-vertical
+      flex-v" (click)="irACosas('feas')">
+      <ion-icon name="thumbs-down"></ion-icon>Cosas Feas
+    </div>
+  </div>
+</ion-content>

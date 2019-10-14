@@ -1,0 +1,26 @@
+.btn {
+  border: none;
+  background: firebrick;
+  color: rgba(255, 255, 255, 0.8);
+  border-radius: 1rem;
+  font-size: 3rem;
+  background-position: center;
+  transition: background 0.8s;
+
+  ion-icon {
+    font-size: 4rem;
+  }
+
+  &-a {
+    background: #a72052;
+  }
+  &-b {
+    background: #0a2342;
+  }
+}
+
+.btn:active {
+  background-size: 100%;
+  transition: background 0s;
+  background: firebrick;
+}

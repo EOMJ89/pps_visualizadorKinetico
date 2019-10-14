@@ -8,45 +8,60 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
+        path: 'home',
         children: [
           {
             path: '',
-            loadChildren: () =>
-              import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+            loadChildren: '../pages/home/home.module#HomePageModule'
           }
         ]
       },
       {
-        path: 'tab2',
+        path: 'lindas',
         children: [
           {
             path: '',
-            loadChildren: () =>
-              import('../tab2/tab2.module').then(m => m.Tab2PageModule)
-          }
+            loadChildren: '../pages/lindas/lindas.module#LindasPageModule'
+          },
         ]
       },
       {
-        path: 'tab3',
+        path: 'feas',
         children: [
           {
             path: '',
-            loadChildren: () =>
-              import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+            loadChildren: '../pages/feas/feas.module#FeasPageModule'
+          },
+        ]
+      },
+      {
+        path: 'propias',
+        children: [
+          {
+            path: '',
+            loadChildren: '../pages/propias/propias.module#PropiasPageModule'
+          },
+        ]
+      },
+      {
+        path: 'estadisticas',
+        children: [
+          {
+            path: '',
+            loadChildren: '../pages/estadisticas/estadisticas.module#EstadisticasPageModule'
           }
         ]
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/home',
         pathMatch: 'full'
       }
-    ]
+    ],
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/home',
     pathMatch: 'full'
   }
 ];
@@ -55,4 +70,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class TabsPageRoutingModule {}
+export class TabsPageRoutingModule { }

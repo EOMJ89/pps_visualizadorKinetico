@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar class="toolbar-main">
+    <ion-buttons slot="start">
+      <ion-button (click)="this.dismiss(false)">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Carga de Imágenes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="width-100 center-horizontal center-vertical">
+    <ion-button class="width-50" color="barnred" (click)="cargar(0)">
+      <ion-icon slot="start" name="photos"></ion-icon>Cargar
+    </ion-button>
+    <ion-button class="width-50" color="barnred" (click)="cargar(1)">
+      <ion-icon slot="start" name="camera"></ion-icon>Tomar
+    </ion-button>
+  </div>
+  <div class="flex-v width-100 center-horizontal center-vertical waiting"
+    *ngIf="this._esperando == true">
+    Espere un momento...
+    <ion-spinner color="barnred"></ion-spinner>
+  </div>
+  <div class="width-100" class="list-main">
+    <div *ngFor="let foto of this._fotos" class="list-pic flex-v">
+      <img class="img-grid"
+        [src]="this._dom.bypassSecurityTrustResourceUrl(foto)">
+      <ion-button size="small" color="barnred"
+        (click)="this.eliminarFoto(this._fotos.indexOf(foto))">
+        <ion-icon slot="start" name="close"></ion-icon>Eliminar
+      </ion-button>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer class="expanded-footer">
+  <ion-button expand="full" class="height-100" [disabled]="!this._fotos.length"
+    (click)="this.dismiss(true);" color="mangotango">Aceptar</ion-button>
+</ion-footer>
