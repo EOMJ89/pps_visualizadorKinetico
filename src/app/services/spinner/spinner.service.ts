@@ -56,7 +56,7 @@ export class SpinnerService {
   }
 
   public async hideSpinner() {
-    console.log('Intento ocultar el spinner con el timer en', this._timer);
+    // console.log('Intento ocultar el spinner con el timer en', this._timer);
 
     if (this._isSpinnerShowing) {
       if (this._timer < 0) {

@@ -2,6 +2,19 @@
 // http://ionicframework.com/docs/theming/
 
 /** Ionic CSS Variables **/
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../assets/fonts/lato/Lato-Regular.ttf");
+}
+@font-face {
+  font-family: "Lato Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../assets/fonts/lato/Lato-Bold.ttf");
+}
+
 :root {
   /** primary **/
   --ion-color-primary: #3880ff;
@@ -84,6 +97,15 @@
     --ion-color-tint: #802322;
   }
 
+  .ion-color-barnredsunny {
+    --ion-color-base: #720a09;
+    --ion-color-base-rgb: 114, 10, 9;
+    --ion-color-contrast: #fff275;
+    --ion-color-contrast-rgb: 255, 242, 117;
+    --ion-color-shade: #640908;
+    --ion-color-tint: #802322;
+  }
+
   .ion-color-mangotango {
     --ion-color-base: #ff8c42;
     --ion-color-base-rgb: 255, 140, 66;
@@ -101,4 +123,42 @@
     --ion-color-shade: #e0d567;
     --ion-color-tint: #fff383;
   }
+
+  .ion-color-bdazzledblue {
+    --ion-color-base: #31598a;
+    --ion-color-base-rgb: 49, 89, 138;
+    --ion-color-contrast: #ffffff;
+    --ion-color-contrast-rgb: 255, 255, 255;
+    --ion-color-shade: #2b4e79;
+    --ion-color-tint: #466a96;
+  }
+
+  .ion-color-oxfordblue {
+    --ion-color-base: #0a2342;
+    --ion-color-base-rgb: 10, 35, 66;
+    --ion-color-contrast: #ffffff;
+    --ion-color-contrast-rgb: 255, 255, 255;
+    --ion-color-shade: #091f3a;
+    --ion-color-tint: #233955;
+  }
+
+  .ion-color-lightcrimson {
+    --ion-color-base: #f46197;
+    --ion-color-base-rgb: 244, 97, 151;
+    --ion-color-contrast: #000000;
+    --ion-color-contrast-rgb: 0, 0, 0;
+    --ion-color-shade: #d75585;
+    --ion-color-tint: #f571a1;
+  }
+
+  .ion-color-amaranthpurple {
+    --ion-color-base: #a72052;
+    --ion-color-base-rgb: 167, 32, 82;
+    --ion-color-contrast: #ffffff;
+    --ion-color-contrast-rgb: 255, 255, 255;
+    --ion-color-shade: #931c48;
+    --ion-color-tint: #b03663;
+  }
+
+  --ion-font-family: "Lato";
 }

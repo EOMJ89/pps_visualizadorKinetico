@@ -38,35 +38,40 @@ export class FotoService {
 
   private _lindas: Array<Foto> = new Array<Foto>();
   public get lindas(): Array<Foto> {
-    if (this._esperando === true && this._lindas.length === 0) {
-      this.inicializarFotos();
-    }
+    this.revisar();
     return this._lindas;
   }
 
   private _feas: Array<Foto> = new Array<Foto>();
   public get feas(): Array<Foto> {
-    if (this._esperando === true && this._feas.length === 0) {
-      this.inicializarFotos();
-    }
+    this.revisar();
     return this._feas;
   }
 
   private _propias: Array<Foto> = new Array<Foto>();
   public get propias(): Array<Foto> {
-    if (this._esperando === true && this._propias.length === 0) {
-      this.inicializarFotos();
-    }
+    this.revisar();
     return this._propias;
   }
 
-  public get haySub(): boolean {
-    return this._sub === undefined ? false : true;
+  private revisar() {
+    if (this._sub === undefined) {
+      this.inicializarFotos();
+    }
+  }
+
+  public destroySub() {
+    if (this._sub) {
+      this._propias = new Array<Foto>();
+      this._sub.unsubscribe();
+      this._sub = undefined;
+      this._esperando = true;
+    }
   }
 
   public inicializarFotos() {
     this._esperando = true;
-    return this.traerFotos().subscribe((data: Array<Foto>) => {
+    this._sub = this.traerFotos().subscribe((data: Array<Foto>) => {
       this._lindas = data.filter((f: Foto) => {
         return f.tipo === 'lindas';
       });
@@ -74,6 +79,7 @@ export class FotoService {
         return f.tipo === 'feas';
       });
       this._propias = data.filter((f: Foto) => {
+        // console.log(f.usuario, this._auth.username);
         return f.usuario === this._auth.username;
       });
       this._esperando = false;
@@ -132,7 +138,7 @@ export class FotoService {
   }
 
   public votar(foto: Foto) {
-    console.log('Voto en la foto', foto.id);
+    // console.log('Voto en la foto', foto.id);
 
     if (!this.verificarVoto(foto.votos)) {
       // console.log('Modifico el registro');
@@ -143,17 +149,17 @@ export class FotoService {
           this._spinnerServ.mostrarToast('Voto añadido.', 3, 'success', 'bottom');
           console.log('Documento Actualizado');
         }).catch((err) => {
-          console.log('error en firebase', err);
-          this._spinnerServ.mostrarToast('Intente más tarde.', 3, 'danger', 'bottom');
+          console.log('Error en firebase', err);
+          this._spinnerServ.mostrarToast('Error de Red: Intente más tarde.', 3, 'danger', 'bottom');
         });
     } else {
-      console.log('Ya ha votado');
+      // console.log('Ya ha votado');
       this._spinnerServ.mostrarToast('Ya ha votado.', 3, 'warning', 'bottom');
     }
   }
 
   public async ver(foto: Foto, mostrarUsuario: boolean) {
-    console.log('Veo la foto', foto.id);
+    // console.log('Veo la foto', foto.id);
 
     await this._modalCtrl.create({
       component: FullscreenPage,
@@ -185,7 +191,7 @@ export class FotoService {
 
     return this._fireServ.subirArchivo(picName, pictureAux)
       .then(async (data: UploadTaskSnapshot) => {
-        console.log('Data en subirFoto, servicio Foto', data);
+        // console.log('Data en subirFoto, servicio Foto', data);
         const link = await data.ref.getDownloadURL();
         const registro: any = this.crearData(link, date, categoria);
         return this._fireServ.agregar('relVisual', registro)

@@ -1,7 +1,5 @@
 .btn {
   border: none;
-  background: firebrick;
-  color: rgba(255, 255, 255, 0.8);
   border-radius: 1rem;
   font-size: 3rem;
   background-position: center;
@@ -12,10 +10,12 @@
   }
 
   &-a {
-    background: #a72052;
+    background: #f46197;
+    color: #a72052;
   }
   &-b {
-    background: #0a2342;
+    background: #31598a;
+    color: #0a2342;
   }
 }
 
@@ -23,4 +23,5 @@
   background-size: 100%;
   transition: background 0s;
   background: firebrick;
+  color: white;
 }

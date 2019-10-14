@@ -33,7 +33,7 @@ export class CargaPage {
 
   public cargar(gallery: number) {
     this._esperando = true;
-    console.log('Cargo de 0(libreria) o 1(camara)', gallery);
+    // console.log('Cargo de 0(libreria) o 1(camara)', gallery);
     this._cameraServ.takePic(gallery).then(async (value: string | null) => {
       if (value !== null) {
         await this._fotos.unshift(value);

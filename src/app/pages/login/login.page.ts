@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms'
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { Router } from '@angular/router';
 import { SpinnerService } from 'src/app/services/spinner/spinner.service';
+import { FotoService } from 'src/app/services/foto/foto.service';
 
 @Component({
   selector: 'app-login',
@@ -12,23 +13,25 @@ import { SpinnerService } from 'src/app/services/spinner/spinner.service';
 export class LoginPage implements OnInit {
   public formGroup: FormGroup;
   public userList = ['admin', 'invitado', 'usuario', 'anonimo', 'tester'];
-  // tslint:disable-next-line: variable-name
+  // tslint:disable: variable-name
   private _errorMessage = '';
 
   constructor(
-    // tslint:disable-next-line: variable-name
     private _formBuilder: FormBuilder,
-    // tslint:disable-next-line: variable-name
     private _authServ: AuthService,
-    // tslint:disable-next-line: variable-name
     private _router: Router,
-    // tslint:disable-next-line: variable-name
-    private _spinnerServ: SpinnerService
+    private _spinnerServ: SpinnerService,
+    private _fotoServ: FotoService,
   ) { }
 
   //#region Inicializador
   ngOnInit() {
     this.inicializarForm();
+  }
+
+  ionViewDidEnter() {
+    // console.log('No more sub');
+    this._fotoServ.destroySub();
   }
 
   public inicializarForm() {

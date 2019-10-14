@@ -1,7 +1,7 @@
 <ion-header>
-  <ion-toolbar class="toolbar-main">
+  <ion-toolbar class="toolbar-feas">
     <ion-buttons slot="end">
-      <ion-button (click)="this._auth.desloguear()" color="sunny">
+      <ion-button (click)="this._auth.desloguear()" color="bdazzledblue">
         <ion-icon name="power"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -11,11 +11,11 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="background-page">
+<ion-content class="background-feas">
   <div class="flex-v width-100 center-horizontal center-vertical waiting"
     *ngIf="this._fotoServ.esperando == true &&
     this._fotoServ.feas.length == 0">
-    Espere un momento...<ion-spinner color="sunny"></ion-spinner>
+    Espere un momento...<ion-spinner color="bdazzledblue"></ion-spinner>
   </div>
   <div class="width-100 center-horizontal center-vertical waiting"
     *ngIf="this._fotoServ.esperando == false &&
@@ -23,7 +23,8 @@
     No hay imagenes.
   </div>
   <div class="width-100" class="list-main">
-    <div *ngFor="let foto of this._fotoServ.feas" class="list-pic">
+    <div *ngFor="let foto of this._fotoServ.feas"
+      class="list-pic list-pic-feas">
       <table align="center">
         <tr>
           <th colspan="3">
@@ -32,7 +33,7 @@
         </tr>
         <tr class="center-vertical center-horizontal">
           <th>
-            <ion-button shape="round" color="barnred" fill="clear"
+            <ion-button shape="round" color="oxfordblue" fill="clear"
               (click)="this._fotoServ.votar(foto)">
               <ion-icon slot="icon-only" name="thumbs-down">
               </ion-icon>
@@ -40,7 +41,7 @@
           </th>
           <th>{{foto.fecha | date : ['dd/MM/yyyy HH:mm']}}</th>
           <th>
-            <ion-button shape="round" color="barnred" fill="clear"
+            <ion-button shape="round" color="oxfordblue" fill="clear"
               (click)="this._fotoServ.ver(foto,false);">
               <ion-icon slot="icon-only" name="eye">
               </ion-icon>

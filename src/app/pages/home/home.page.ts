@@ -34,14 +34,13 @@ export class HomePage {
         // console.log('Retorno', r);
         if (r.data.paraCargar === true) {
           this._spinnerServ.showSpinner();
-          console.log('Voy a cargar');
+          // console.log('Voy a cargar');
           let totalSubidas = 0;
           let i = 0;
           const aDate = new Date().getTime();
 
           for (const f of r.data.fotos) {
-            await this._fotoService.subirFoto(f, i, categoria, aDate).then((d: any) => {
-              console.log('d en home', d);
+            await this._fotoService.subirFoto(f, i, categoria, aDate).then(() => {
               totalSubidas++;
             })
               .catch((err) => {

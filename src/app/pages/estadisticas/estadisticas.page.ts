@@ -123,6 +123,7 @@ export class EstadisticasPage implements OnInit, OnDestroy {
           yAxes: [
             {
               ticks: {
+                display: false,
                 beginAtZero: true
               }
             }
@@ -139,9 +140,8 @@ export class EstadisticasPage implements OnInit, OnDestroy {
           if (_event.length > 0) {
             // console.log('Points', _points);
             // console.log('Event', _event);
-            console.log('Index', _event[0]._model.label);
+            // console.log('Index', _event[0]._model.label);
             this.findPicture('feas', _event[0]._model.label);
-
           }
         },
       }
@@ -182,7 +182,7 @@ export class EstadisticasPage implements OnInit, OnDestroy {
           if (_event.length > 0) {
             // console.log('Points', _points);
             // console.log('Event', _event);
-            console.log('Index', _event[0]._model.label);
+            // console.log('Index', _event[0]._model.label);
             this.findPicture('lindas', _event[0]._model.label);
           }
         },

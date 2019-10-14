@@ -3,6 +3,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { Observable } from 'rxjs';
 import { SpinnerService } from '../spinner/spinner.service';
 import { Router } from '@angular/router';
+import { FotoService } from '../foto/foto.service';
 
 @Injectable({
   providedIn: 'root'
@@ -26,7 +27,7 @@ export class AuthService {
   public iniciarSesion(credenciales: { correo: string, clave: string }) {
     return this._auth.auth.signInWithEmailAndPassword(credenciales.correo, credenciales.clave)
       .then((user: firebase.auth.UserCredential) => {
-        console.log('Logueo exitoso');
+        // console.log('Logueo exitoso');
       });
   }
 
@@ -43,7 +44,7 @@ export class AuthService {
       })
       .catch((error: any) => {
         this._spinner.hideSpinner();
-        console.log(error);
+        console.log('Error en desloguear', error);
       });
   }
 }
