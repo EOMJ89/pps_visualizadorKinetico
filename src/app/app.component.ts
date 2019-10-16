@@ -27,12 +27,12 @@ export class AppComponent {
       setTimeout(() => {
         // console.log('Desactivo la Splash Screen estÃ¡tica');
         this.splashScreen.hide();
-      }, 1000);
+      }, 3000);
 
       setTimeout(() => {
         // console.log('Desactivo la Splash Screen animada');
         this.showSplash = false;
-      }, 6000);
+      }, 8000);
     });
   }
 }

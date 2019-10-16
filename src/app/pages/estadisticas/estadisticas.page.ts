@@ -15,9 +15,8 @@ export class EstadisticasPage implements OnInit, OnDestroy {
 
   // tslint:disable: variable-name
   private _sub: Subscription;
-  private _barChart: Chart;
-  private _doughnutChart: Chart;
-
+  private _barChart: Chart = null;
+  private _doughnutChart: Chart = null;
   constructor(
     private _fotoServ: FotoService,
     private _auth: AuthService) { }
@@ -81,8 +80,11 @@ export class EstadisticasPage implements OnInit, OnDestroy {
     return auxReturn;
   }
 
-  public createBar(fotos: Foto[]) {
+  public async createBar(fotos: Foto[]) {
     const data = this.formatearDatos(fotos);
+    if (this._barChart !== null) {
+      await this._barChart.destroy();
+    }
     this._barChart = new Chart(this.barCanvas.nativeElement, {
       type: 'bar',
       data: {
@@ -148,8 +150,12 @@ export class EstadisticasPage implements OnInit, OnDestroy {
     });
   }
 
-  public createDoughnut(fotos: Foto[]) {
+  public async createDoughnut(fotos: Foto[]) {
     const data = this.formatearDatos(fotos);
+    if (this._doughnutChart !== null) {
+      await this._doughnutChart.destroy();
+    }
+
     this._doughnutChart = new Chart(this.doughnutCanvas.nativeElement, {
       type: 'doughnut',
       data: {

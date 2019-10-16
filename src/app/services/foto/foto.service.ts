@@ -28,7 +28,7 @@ export class FotoService {
     private _fireServ: FirebaseService,
     private _auth: AuthService,
     private _modalCtrl: ModalController,
-    private _spinnerServ: SpinnerService
+    private _spinnerServ: SpinnerService,
   ) { }
 
   private _esperando = true;
@@ -168,6 +168,7 @@ export class FotoService {
       .then((modal: HTMLIonModalElement) => {
         modal.present();
       });
+
   }
 
   private dividirAll(picture: string): string {
