@@ -6,13 +6,13 @@
   font-family: "Lato";
   font-style: normal;
   font-weight: normal;
-  src: url("../assets/fonts/lato/Lato-Regular.ttf");
+  src: url("../assets/fonts/lato/CaviarDreams.ttf");
 }
 @font-face {
   font-family: "Lato Bold";
   font-style: normal;
   font-weight: normal;
-  src: url("../assets/fonts/lato/Lato-Bold.ttf");
+  src: url("../assets/fonts/lato/CaviarDreams_Bold.ttf");
 }
 
 :root {
@@ -89,75 +89,75 @@
   --ion-color-light-tint: #f5f6f9;
 
   .ion-color-barnred {
-    --ion-color-base: #720a09;
-    --ion-color-base-rgb: 114, 10, 9;
+    --ion-color-base: #48593a;
+    --ion-color-base-rgb: 72, 89, 58;
     --ion-color-contrast: #ffffff;
     --ion-color-contrast-rgb: 255, 255, 255;
-    --ion-color-shade: #640908;
-    --ion-color-tint: #802322;
+    --ion-color-shade: #3f4e33;
+    --ion-color-tint: #5a6a4e;
   }
 
   .ion-color-barnredsunny {
-    --ion-color-base: #720a09;
-    --ion-color-base-rgb: 114, 10, 9;
-    --ion-color-contrast: #fff275;
-    --ion-color-contrast-rgb: 255, 242, 117;
-    --ion-color-shade: #640908;
-    --ion-color-tint: #802322;
+    --ion-color-base: #48593a;
+    --ion-color-base-rgb: 72, 89, 58;
+    --ion-color-contrast: #f6e7e7;
+    --ion-color-contrast-rgb: 246, 231, 231;
+    --ion-color-shade: #3f4e33;
+    --ion-color-tint: #5a6a4e;
   }
 
   .ion-color-mangotango {
-    --ion-color-base: #ff8c42;
-    --ion-color-base-rgb: 255, 140, 66;
-    --ion-color-contrast: #000000;
-    --ion-color-contrast-rgb: 0, 0, 0;
-    --ion-color-shade: #e07b3a;
-    --ion-color-tint: #ff9855;
+    --ion-color-base: #718b5b;
+    --ion-color-base-rgb: 113, 139, 91;
+    --ion-color-contrast: #ffffff;
+    --ion-color-contrast-rgb: 255, 255, 255;
+    --ion-color-shade: #637a50;
+    --ion-color-tint: #7f976b;
   }
 
   .ion-color-sunny {
-    --ion-color-base: #fff275;
-    --ion-color-base-rgb: 255, 242, 117;
+    --ion-color-base: #f6e7e7;
+    --ion-color-base-rgb: 246, 231, 231;
     --ion-color-contrast: #000000;
     --ion-color-contrast-rgb: 0, 0, 0;
-    --ion-color-shade: #e0d567;
-    --ion-color-tint: #fff383;
-  }
-
-  .ion-color-bdazzledblue {
-    --ion-color-base: #31598a;
-    --ion-color-base-rgb: 49, 89, 138;
-    --ion-color-contrast: #ffffff;
-    --ion-color-contrast-rgb: 255, 255, 255;
-    --ion-color-shade: #2b4e79;
-    --ion-color-tint: #466a96;
+    --ion-color-shade: #d8cbcb;
+    --ion-color-tint: #f7e9e9;
   }
 
   .ion-color-oxfordblue {
-    --ion-color-base: #0a2342;
-    --ion-color-base-rgb: 10, 35, 66;
+    --ion-color-base: #7f7f7f;
+    --ion-color-base-rgb: 127, 127, 127;
     --ion-color-contrast: #ffffff;
     --ion-color-contrast-rgb: 255, 255, 255;
-    --ion-color-shade: #091f3a;
-    --ion-color-tint: #233955;
+    --ion-color-shade: #707070;
+    --ion-color-tint: #8c8c8c;
+  }
+
+  .ion-color-bdazzledblue {
+    --ion-color-base: #bfbfbf;
+    --ion-color-base-rgb: 191, 191, 191;
+    --ion-color-contrast: #000000;
+    --ion-color-contrast-rgb: 0, 0, 0;
+    --ion-color-shade: #a8a8a8;
+    --ion-color-tint: #c5c5c5;
   }
 
   .ion-color-lightcrimson {
-    --ion-color-base: #f46197;
-    --ion-color-base-rgb: 244, 97, 151;
+    --ion-color-base: #c17767;
+    --ion-color-base-rgb: 193, 119, 103;
     --ion-color-contrast: #000000;
     --ion-color-contrast-rgb: 0, 0, 0;
-    --ion-color-shade: #d75585;
-    --ion-color-tint: #f571a1;
+    --ion-color-shade: #aa695b;
+    --ion-color-tint: #c78576;
   }
 
   .ion-color-amaranthpurple {
-    --ion-color-base: #a72052;
-    --ion-color-base-rgb: 167, 32, 82;
+    --ion-color-base: #210203;
+    --ion-color-base-rgb: 33, 2, 3;
     --ion-color-contrast: #ffffff;
     --ion-color-contrast-rgb: 255, 255, 255;
-    --ion-color-shade: #931c48;
-    --ion-color-tint: #b03663;
+    --ion-color-shade: #1d0203;
+    --ion-color-tint: #371b1c;
   }
 
   --ion-font-family: "Lato";

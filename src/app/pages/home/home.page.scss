@@ -10,18 +10,18 @@
   }
 
   &-a {
-    background: #f46197;
-    color: #a72052;
+    background: #bfbfbf;
+    color: #7f7f7f;
   }
   &-b {
-    background: #31598a;
-    color: #0a2342;
+    background: #c17767;
+    color: #210203;
   }
 }
 
 .btn:active {
   background-size: 100%;
   transition: background 0s;
-  background: firebrick;
+  background: rgb(80, 80, 80);
   color: white;
 }

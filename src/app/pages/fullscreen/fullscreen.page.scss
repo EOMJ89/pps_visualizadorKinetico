@@ -17,8 +17,11 @@ ion-toolbar {
 }
 
 .extra-info {
-  padding: 0rem 1.5rem;
   background: black;
   font-size: 1.2rem;
-  color: #f4f5f8;
+  color: white;
+
+  &-others {
+    padding: 0rem 1.5rem;
+  }
 }

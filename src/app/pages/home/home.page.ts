@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { SpinnerService } from 'src/app/services/spinner/spinner.service';
 import { ModalController } from '@ionic/angular';
 import { CargaPage } from '../carga/carga.page';
-import { Foto, FotoService } from 'src/app/services/foto/foto.service';
+import { FotoService } from 'src/app/services/foto/foto.service';
 import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({

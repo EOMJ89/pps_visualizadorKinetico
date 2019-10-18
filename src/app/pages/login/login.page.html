@@ -3,9 +3,9 @@
     <ion-card class="width-100 background-card">
       <ion-card-header>
         <ion-card-title class="ion-text-center center-vertical
-          center-horizontal">
+          center-horizontal flex-v">
+          <div>Inicio de Sesión</div>
           <img src="../../../assets/logo_transparent.png" class="img-logo">
-          Inicio de Sesión
         </ion-card-title>
       </ion-card-header>
 
@@ -43,12 +43,12 @@
           </ion-item>
           <ion-row class="ion-justify-content-center">
             <ion-col class="ion-text-center">
-              <ion-button color="success"
+              <ion-button color="primary"
                 [disabled]="!this.formGroup.valid"
                 (click)="iniciarSesion()">Entrar</ion-button>
             </ion-col>
             <ion-col class="ion-text-center">
-              <ion-button color="danger" type="reset"
+              <ion-button color="secondary" type="reset"
                 (click)="this.limpiarForm()">Borrar</ion-button>
             </ion-col>
           </ion-row>
@@ -64,8 +64,10 @@
           <ion-row class="ion-justify-content-center">
             <div *ngFor="let user of this.userList">
               <div class="ion-text-center">
-                <ion-button (click)="rellenarCampos(user)" color="mangotango"
-                  size="small">{{user}}</ion-button>
+                <ion-button (click)="rellenarCampos(user)"
+                  shape="round" fill="outline" color="mangotango" size="small">
+                  {{user}}
+                </ion-button>
               </div>
             </div>
           </ion-row>

@@ -1,10 +1,15 @@
 <ion-header no-border>
   <ion-toolbar>
-    <ion-buttons>
+    <ion-buttons slot="start">
       <ion-button (click)="this.dismiss()" color="light">
-        <ion-icon name="arrow-back"></ion-icon>
+        <ion-icon name="close"></ion-icon>
       </ion-button>
     </ion-buttons>
+    <ion-title>
+      <div class="extra-info" *ngIf="this.mostrarUsuario == true">Usuario:
+        {{this.foto.usuario}}
+      </div>
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -15,9 +20,11 @@
 </ion-content>
 
 <ion-footer no-border class="expanded-footer">
-  <div class="flex-v width-100 height-100 center-horizontal extra-info">
-    <div>Fecha: {{this.foto.fecha | date: ['dd/MM/yyyy HH:mm']}}</div>
+  <div class="flex-v width-100 height-100 center-horizontal extra-info
+    extra-info-others">
+    <div class="width-100">Fecha: {{this.foto.fecha | date: ['dd/MM/yyyy
+      HH:mm']}}</div>
+    <div>Tipo: {{this.foto.tipo | titlecase }}</div>
     <div>Votos: {{this.foto.votos.length}}</div>
-    <div *ngIf="this.mostrarUsuario == true">Usuario: {{this.foto.usuario}}</div>
   </div>
 </ion-footer>

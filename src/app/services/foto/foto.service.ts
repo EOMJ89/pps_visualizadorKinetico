@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { FirebaseService } from '../firebase/firebase.service';
 import { map } from 'rxjs/operators';
-import { ModalController } from '@ionic/angular';
+import { ModalController, PopoverController } from '@ionic/angular';
 import { AuthService } from '../auth/auth.service';
 import { SpinnerService } from '../spinner/spinner.service';
 import { FullscreenPage } from 'src/app/pages/fullscreen/fullscreen.page';
 import { Subscription } from 'rxjs';
 import { UploadTaskSnapshot } from '@angular/fire/storage/interfaces';
+import { PopoverPage } from 'src/app/pages/popover/popover.page';
 
 export class Foto {
   id: string;
@@ -29,6 +30,7 @@ export class FotoService {
     private _auth: AuthService,
     private _modalCtrl: ModalController,
     private _spinnerServ: SpinnerService,
+    private _popCtrl: PopoverController
   ) { }
 
   private _esperando = true;
@@ -147,7 +149,7 @@ export class FotoService {
       this._fireServ.actualizar('relVisual', foto.id, this.toData(foto))
         .then(() => {
           this._spinnerServ.mostrarToast('Voto añadido.', 3, 'success', 'bottom');
-          console.log('Documento Actualizado');
+          // console.log('Documento Actualizado');
         }).catch((err) => {
           console.log('Error en firebase', err);
           this._spinnerServ.mostrarToast('Error de Red: Intente más tarde.', 3, 'danger', 'bottom');
@@ -199,6 +201,27 @@ export class FotoService {
           .catch(err => {
             console.log('error al subir a firebase', err);
           });
+      });
+  }
+
+  public mostrarPop(foto: Foto) {
+    // console.log('Muestro el popover', foto);
+
+    this._popCtrl.create({
+      component: PopoverPage,
+      componentProps: { foto }
+    })
+      .then((pop: HTMLIonPopoverElement) => {
+        pop.onDidDismiss()
+          .then((r: any) => {
+            // console.log('Retorno', r);
+            if (r.data !== undefined) {
+              if (r.data.accion) {
+                this.votar(foto);
+              }
+            }
+          });
+        pop.present();
       });
   }
 }

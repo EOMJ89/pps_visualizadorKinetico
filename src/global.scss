@@ -119,19 +119,19 @@
 }
 
 .background-page {
-  --background: #720a09;
+  --background: #48593a;
 }
 
 .toolbar-main {
-  --color: #fff275;
-  --background: #720a09;
+  --color: #f6e7e7;
+  --background: #48593a;
 }
 
 .spinner-class {
-  --background: #720a09;
+  --background: #48593a;
 
   .loading-wrapper {
-    background-image: url("./assets/splash_logo.png"), radial-gradient(circle, #720a09 0%, #720a09 100%);
+    background-image: url("./assets/splash_logo_full.png"), radial-gradient(circle, #48593a 0%, #48593a 100%);
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -142,38 +142,28 @@
   }
 }
 
-// Para las paginas de fotos
-.list-main {
-  margin: 0rem 0.2rem;
-}
-
 .list-pic {
-  border: #ff8c42 solid 1rem;
+  border: #718b5b solid 1rem;
   border-radius: 1rem;
-  background: #ff8c42;
-  color: #720a09;
+  background: #718b5b;
+  color: #48593a;
   margin-bottom: 0.2rem;
   font-size: 1.2rem;
 
   &-feas {
     // Azul
-    border: #31598a solid 1rem;
-    background: #31598a;
-    color: #0a2342;
+    border: #bfbfbf solid 1rem;
+    background: #bfbfbf;
+    color: #7f7f7f;
   }
   &-lindas {
     // Rosa
-    border: #f46197 solid 1rem;
-    background: #f46197;
-    color: #a72052;
+    border: #c17767 solid 1rem;
+    background: #c17767;
+    color: #210203;
   }
 }
 
-.extra-padding {
-  padding-top: 0.1rem;
-}
-
-.img-grid {
-  max-width: 100%;
-  height: auto;
+.black-border {
+  border: 1rem black solid;
 }

@@ -25,8 +25,17 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { CargaPageModule } from './pages/carga/carga.module';
 import { FullscreenPageModule } from './pages/fullscreen/fullscreen.module';
 
+// Popover
+import { PopoverPageModule } from './pages/popover/popover.module';
+
 // Camera
 import { Camera } from '@ionic-native/camera/ngx';
+
+// Device Motion
+import { DeviceMotion } from '@ionic-native/device-motion/ngx';
+
+// Screen
+import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -47,12 +56,15 @@ import { Camera } from '@ionic-native/camera/ngx';
     AngularFireStorageModule,
     // Carga
     CargaPageModule,
-    FullscreenPageModule
+    FullscreenPageModule,
+    PopoverPageModule,
   ],
   providers: [
     StatusBar,
     SplashScreen,
     Camera,
+    DeviceMotion,
+    ScreenOrientation,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     { provide: FirestoreSettingsToken, useValue: {} },
   ],

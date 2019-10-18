@@ -5,10 +5,15 @@
       'spinner-portrait': !this.platform.isLandscape()
       }"><img src="../assets/splash_nombre.png">
     </div>
-    <div class="ld ld-breath spinner" [ngClass]="{
+    <div class="spinner" [ngClass]="{
       'spinner-landscape': this.platform.isLandscape(),
       'spinner-portrait': !this.platform.isLandscape()
       }"><img src="../assets/splash_logo.png">
+    </div>
+    <div class="ld ld-fade spinner" [ngClass]="{
+      'spinner-landscape': this.platform.isLandscape(),
+      'spinner-portrait': !this.platform.isLandscape()
+      }"><img src="../assets/splash_main.png">
     </div>
   </div>
   <ion-router-outlet></ion-router-outlet>

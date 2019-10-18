@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar class="toolbar-extra">
+    <ion-title class="center-vertical">Datos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background-page extra-padding">
+  <div class="center-horizontal center-vertical flex-v extra-padding">
+    <div class="flex-v width-100 height-100 center-horizontal extra-info">
+      <div>Usuario: {{this.foto.usuario}}</div>
+      <div>Fecha: {{this.foto.fecha | date: ['dd/MM/yyyy HH:mm']}}</div>
+      <div>Tipo: {{this.foto.tipo | titlecase }}</div>
+      <div>Votos: {{this.foto.votos.length}}</div>
+    </div>
+    <ion-button size="large" color="mangotango"
+      (click)="this.devolverAccion(true)">
+      <ion-icon slot="start" [name]="this.foto.tipo == 'feas' ?
+        'thumbs-down' : 'thumbs-up'"></ion-icon>Votar
+    </ion-button>
+  </div>
+</ion-content>

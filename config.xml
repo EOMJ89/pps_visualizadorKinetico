@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="omj89.relevamientoVisual" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Relevamiento Visual</name>
-    <description>Registre y califique diversos aspectos de su entorno.</description>
+<widget id="omj89.visualizadorKinetico" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Visualizador Kinético</name>
+    <description>Registre y califique diversos aspectos de su entorno con una inferfaz kinetica.</description>
     <author email="hi@ionicframework.com" href="http://ionicframework.com/">Ionic Framework Team</author>
     <content src="index.html" />
     <access origin="*" />
